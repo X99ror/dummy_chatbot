@@ -8,7 +8,8 @@ from datetime import datetime
 
 load_dotenv()
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+api_key = st.secrets["OPENAI_API_KEY"]
+client = OpenAI(api_key=api_key)
 
 CHAT_FOLDER = "chats"
 os.makedirs(CHAT_FOLDER, exist_ok=True)
